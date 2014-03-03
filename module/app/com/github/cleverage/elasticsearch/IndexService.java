@@ -242,7 +242,7 @@ public abstract class IndexService {
                                                                String updateScript) {
         return IndexClient.client.prepareUpdate(indexPath.index, indexPath.type, id)
                 .setScriptParams(updateFieldValues)
-                .setScript(updateScript);
+                .setScript(updateScript).setRefresh(true);
     }
 
     /**
